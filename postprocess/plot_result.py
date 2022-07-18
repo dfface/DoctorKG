@@ -89,4 +89,4 @@ def loss_metric_plot(history, epochs, img_path, plot_title, y_label):
 eval_results_df = pd.read_csv("../checkpoints/eval_results.csv")
 num_train_epochs = 30  # the number of training epochs
 # loss_metric_plot(eval_results_df, num_train_epochs, "./result.pdf", "Bert for DoctorKG - Performance", "loss")
-loss_metric_plot_optimize(eval_results_df, num_train_epochs, "./result.png", "BERT for DoctorKG - Performance", "loss")
+loss_metric_plot_optimize(eval_results_df, num_train_epochs, "./result.pdf", "BERT for DCCKG - Performance", "Loss")

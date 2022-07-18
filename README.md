@@ -1,6 +1,6 @@
-# DoctorKG
+# DCCKG
 
-This is the code repository for DoctorKG.
+This is the code repository for DCCKG.
 
 Now, it includes:
 
@@ -11,8 +11,8 @@ Now, it includes:
 ## Quick Start
 
 ```shell
-conda create -n DoctorKG python=3.8
-conda activate DoctorKG
+conda create -n DCCKG python=3.8
+conda activate DCCKG
 
 pip install -r requirements.txt
 

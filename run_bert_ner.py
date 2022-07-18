@@ -191,8 +191,7 @@ def main():
                         temp_1 = []
                         temp_2 = []
                         for j, m in enumerate(label):
-                            # m == 0 就是 label_ids[i][j] == 0
-                            if m == 0 or logits[i][j] == 0:  # bugfix: 它这里之前写的有问题，得改，否则 KeyError 0
+                            if j == 0:
                                 continue
                             elif label_ids[i][j] == len(label_map):  # attention: [SEP]是最后一个（编号为len(label_map)）表示分隔
                                 y_true.append(temp_1)
@@ -200,7 +199,10 @@ def main():
                                 break
                             else:
                                 temp_1.append(label_map[label_ids[i][j]])
-                                temp_2.append(label_map[logits[i][j]])
+                                if logits[i][j] != 0:
+                                    temp_2.append(label_map[logits[i][j]])
+                                else:
+                                    temp_2.append('0')
                 # print(len(y_true))
                 # print(len(y_pred))
                 report = classification_report(y_true, y_pred, digits=4)
